@@ -39,4 +39,14 @@ CREATE TABLE
         FOREIGN KEY (recipeId) REFERENCES recipes(id) ON DELETE CASCADE
     ) default charset utf8 COMMENT '';
 
-DROP TABLE favorites 
+DROP TABLE favorites;
+
+SELECT
+    accounts.*,
+    favorites.*,
+    recipes.*
+FROM favorites
+    JOIN accounts ON accounts.id = favorites.accountId
+    JOIN recipes ON recipes.id = favorites.recipeId
+WHERE
+    favorites.accountId = @accountId;

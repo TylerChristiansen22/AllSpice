@@ -15,4 +15,10 @@ namespace AllSpice.Models
         public Account creator { get; set; }
         public string creatorId { get; set; }
     }
+
+    public class RecipeFavorite : Recipe
+    {
+        public int FavoriteId { get; set; }
+        public string accountId { get; set; }
+    }
 }

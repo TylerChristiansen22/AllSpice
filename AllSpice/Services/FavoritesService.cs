@@ -19,9 +19,14 @@ public class FavoritesService
         return favorite;
     }
 
-    internal List<Favorite> GetAccountFavorites(string accountId)
+
+    internal List<RecipeFavorite> GetAccountFavorites(string accountId)
     {
-        List<Favorite> favorites = _repo.GetAccountFavorites(accountId);
+        List<RecipeFavorite> favorites = _repo.GetAccountFavorites(accountId);
         return favorites;
+    }
+    internal string DeleteFavorite(int favoriteId, string id)
+    {
+        throw new NotImplementedException();
     }
 }
